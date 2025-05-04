@@ -6,19 +6,20 @@ This respository started off as a cloned repository from a project by [Amrit Sin
 ### Image Sources
 For this assignment, we found other images to use. These are the sources for the images I've found.
 
-image5.jpg: "[Milky Way Galaxy of Joshua Tree](https://www.flickr.com/photos/115357548@N08/18202006112)" by [Joshua Tree National Park](https://www.flickr.com/photos/115357548@N08) is marked with [Public Domain Mark 1.0 ![](https://mirrors.creativecommons.org/presskit/icons/pd.svg)](https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse).
+image5.jpg: "[Milky Way Galaxy of Joshua Tree](https://www.flickr.com/photos/115357548@N08/18202006112)" by [Joshua Tree National Park](https://www.flickr.com/photos/115357548@N08) is marked with [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse).
 
-image6.jpg: "[Hawai‘i Volcanoes National Park](https://www.flickr.com/photos/42600860@N02/32852214577)" by [National Park Service](https://www.flickr.com/photos/42600860@N02) is marked with [Public Domain Mark 1.0 ![](https://mirrors.creativecommons.org/presskit/icons/pd.svg)](https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse).
+image6.jpg: "[Hawai‘i Volcanoes National Park](https://www.flickr.com/photos/42600860@N02/32852214577)" by [National Park Service](https://www.flickr.com/photos/42600860@N02) is marked with [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse).
 
-image7.jpg: "[Glacier National Park](https://www.flickr.com/photos/42600860@N02/51971764978)" by [National Park Service](https://www.flickr.com/photos/42600860@N02) is marked with [Public Domain Mark 1.0 ![](https://mirrors.creativecommons.org/presskit/icons/pd.svg)](https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse).
+image7.jpg: "[Glacier National Park](https://www.flickr.com/photos/42600860@N02/51971764978)" by [National Park Service](https://www.flickr.com/photos/42600860@N02) is marked with [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse).
 
-image8.jpg: "[Bison feeding near Mud Volcano](https://www.flickr.com/photos/80223459@N05/51916511191)" by [YellowstoneNPS](https://www.flickr.com/photos/80223459@N05) is marked with [Public Domain Mark 1.0 ![](https://mirrors.creativecommons.org/presskit/icons/pd.svg)](https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse).
+image8.jpg: "[Bison feeding near Mud Volcano](https://www.flickr.com/photos/80223459@N05/51916511191)" by [YellowstoneNPS](https://www.flickr.com/photos/80223459@N05) is marked with [Public Domain Mark 1.0](https://creativecommons.org/publicdomain/mark/1.0/?ref=openverse).
 
 ## Roles of Programs and Data
 Text explaining programs and data here.
 
 - image_processing
     - image_processesing.go
+    - image_processing_test.go
 - images
     - output
         - image1.jpeg
@@ -33,6 +34,7 @@ Text explaining programs and data here.
 - go.mod: defines the module's properties
 - go.sum: record of the library the project depends on
 - LICENSE: from the original repository
+- main_test.go
 - main.go
 - README.md
 
@@ -42,8 +44,3 @@ An executable for this project was created using Windows. To create your own exe
 
 ## Use of AI
 
-# Episode #21: Concurrency in Go: Pipeline Pattern
-
-[Episode link](https://www.codeheim.io/courses/Episode-21-Concurrency-in-Go-Pipeline-Pattern-65c3ca14e4b0628a4e002201)
-
-Requires Golang 1.20 or higher.
