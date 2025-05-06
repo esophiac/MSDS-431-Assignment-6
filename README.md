@@ -1,5 +1,16 @@
 # Assignment 6: Data Pipelines with Concurrency
 
+Made the following changes to the repository.
+- Add error checking for image file input and output.
+    - In the imageprocessing packages, changed the ReadImage function to print out error message on nil and when getting a err for decoding the image
+    - Also changed the output function to output errors with the log function in the os package
+    - include error check to determine if WriteImage succeeded or failed
+    - include an error check to determine if the file input is valid
+- Replaced four images from original repository with image5, image6, image7, and image8
+- Added unit tests in image_processing subdirectory for image_processing.go and main_test in the main directory
+- Additional code modifications
+    - Added more comments to explain how the functions worked
+
 ## Background
 This respository started off as a cloned repository from a project by [Amrit Singh](https://www.codeheim.io/) to demonstrate Go image processing pipeline with concurrency. The initial repository can be found [here](https://github.com/code-heim/go_21_goroutines_pipeline). He also put together a video tutorial [here](https://www.youtube.com/watch?v=8Rn8yOQH62k).
 

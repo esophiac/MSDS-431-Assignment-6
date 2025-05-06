@@ -4,6 +4,7 @@ import (
 	"fmt"
 	imageprocessing "goroutines_pipeline/image_processing"
 	"image"
+	"os"
 	"strings"
 )
 
@@ -24,8 +25,14 @@ func loadImage(paths []string) <-chan Job {
 		for _, p := range paths {
 			job := Job{InputPath: p,
 				OutPath: strings.Replace(p, "images/", "images/output/", 1)}
-			job.Image = imageprocessing.ReadImage(p)
-			out <- job
+
+			// throw error if file path is not valid
+			if _, err := os.Stat(job.InputPath); err != nil {
+				fmt.Printf("Error processing File '%s'. Error messsage: %s\n", job.InputPath, err)
+			} else {
+				job.Image = imageprocessing.ReadImage(p)
+				out <- job
+			}
 		}
 		close(out)
 	}()
@@ -69,8 +76,13 @@ func saveImage(input <-chan Job) <-chan bool {
 	go func() {
 		for job := range input { // Read from the channel
 			imageprocessing.WriteImage(job.OutPath, job.Image)
+
 			// include error check to determine if WriteImage succeeded or failed
-			out <- true
+			if _, err := os.Stat(job.OutPath); err == nil {
+				out <- true
+			} else {
+				out <- false
+			}
 		}
 		close(out)
 	}()
