@@ -92,7 +92,7 @@ func saveImage(input <-chan Job) <-chan bool {
 func main() {
 
 	// list of file paths
-	imagePaths := []string{"images/image1.jpeg",
+	imagePaths := []string{"images/image5.jpeg",
 		"images/image2.jpeg",
 		"images/image3.jpeg",
 		"images/image4.jpeg",
@@ -109,5 +109,21 @@ func main() {
 		} else {
 			fmt.Println("Failed!")
 		}
+	}
+
+	fmt.Println("----------")
+
+	// running the program without channels
+
+	for _, value := range imagePaths {
+
+		outPath := strings.Replace(value, "images/", "images/output/", 1)
+
+		imgPath := imageprocessing.ReadImage(value)
+		imgSize := imageprocessing.Resize(imgPath)
+		imgGray := imageprocessing.Grayscale(imgSize)
+		imageprocessing.WriteImage(outPath, imgGray)
+
+		fmt.Println("image processing complete")
 	}
 }

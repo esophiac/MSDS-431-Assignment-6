@@ -2,13 +2,15 @@ package main
 
 import (
 	"fmt"
+	imageprocessing "goroutines_pipeline/image_processing"
+	"strings"
 	"testing"
 )
 
 // test the loadImage function in main.go
-func TestLoadImage(t *testing.T) {
-
-}
+//func TestLoadImage(t *testing.T) {
+//
+//}
 
 func BenchmarkGoRoutine(b *testing.B) {
 	// list of file paths
@@ -33,6 +35,23 @@ func BenchmarkGoRoutine(b *testing.B) {
 }
 
 func BenchmarkWithout(b *testing.B) {
-	// stuff here for benchmarking
+
+	imagePaths := []string{"images/image1.jpeg",
+		"images/image2.jpeg",
+		"images/image3.jpeg",
+		"images/image4.jpeg",
+	}
+
+	for _, value := range imagePaths {
+
+		outPath := strings.Replace(value, "images/", "images/output/", 1)
+
+		imgPath := imageprocessing.ReadImage(value)
+		imgSize := imageprocessing.Resize(imgPath)
+		imgGray := imageprocessing.Grayscale(imgSize)
+		imageprocessing.WriteImage(outPath, imgGray)
+
+		//fmt.Println("image processing complete")
+	}
 
 }

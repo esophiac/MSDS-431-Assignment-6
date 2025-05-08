@@ -30,7 +30,6 @@ Text explaining programs and data here.
 
 - image_processing
     - image_processesing.go
-    - image_processing_test.go
 - images
     - output
         - image1.jpeg
