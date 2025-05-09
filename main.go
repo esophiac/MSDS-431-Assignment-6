@@ -90,7 +90,7 @@ func saveImage(input <-chan Job) <-chan bool {
 }
 
 func main() {
-
+	// program with go routines starts here
 	// list of file paths
 	imagePaths := []string{"images/image5.jpeg",
 		"images/image2.jpeg",
@@ -98,8 +98,7 @@ func main() {
 		"images/image4.jpeg",
 	}
 
-	channel1 := loadImage(imagePaths) // read files and returns first channel
-	fmt.Println(len(channel1))
+	channel1 := loadImage(imagePaths)        // read files and returns first channel
 	channel2 := resize(channel1)             // resize the image and return another channel
 	channel3 := convertToGrayscale(channel2) // convert to grayscale and return another channel
 	writeResults := saveImage(channel3)      // save processed files
@@ -114,7 +113,7 @@ func main() {
 
 	fmt.Println("----------")
 
-	// running the program without channels
+	// running the program without channels and goroutines
 
 	for _, value := range imagePaths {
 

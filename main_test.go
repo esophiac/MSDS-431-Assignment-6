@@ -24,7 +24,7 @@ var imagePaths []string = []string{"images/image1.jpeg",
 // just making sure the channels are acting appropriately
 func TestLoadImage(t *testing.T) {
 
-	expected := 4
+	expected := 0 // unbuffered channel
 
 	result := loadImage(imagePaths)
 
@@ -39,7 +39,7 @@ func TestResize(t *testing.T) {
 
 	input := loadImage(imagePaths)
 
-	expected := 4
+	expected := 0 // unbuffered channel
 
 	result := resize(input)
 
@@ -48,6 +48,35 @@ func TestResize(t *testing.T) {
 	}
 }
 
+// testing the convertToGrayscale function in main.go
+func TestConvertToGrayScale(t *testing.T) {
+
+	input := loadImage(imagePaths)
+
+	expected := 0 // unbuffered channel
+
+	result := convertToGrayscale(input)
+
+	if len(result) != expected {
+		t.Errorf("Expected %v, got %v", expected, len(result))
+	}
+}
+
+// testing the saveImage function in main.go
+func TestSaveImage(t *testing.T) {
+
+	input := loadImage(imagePaths)
+
+	expected := 0 // unbuffered channel
+
+	result := saveImage(input)
+
+	if len(result) != expected {
+		t.Errorf("Expected %v, got %v", expected, len(result))
+	}
+}
+
+// benchmark to get time with goroutines
 func BenchmarkGoRoutine(b *testing.B) {
 	// list of file paths
 	imagePaths := []string{"images/image1.jpeg",
@@ -70,6 +99,7 @@ func BenchmarkGoRoutine(b *testing.B) {
 	}
 }
 
+// benchmark to get time of program without goroutines
 func BenchmarkWithout(b *testing.B) {
 
 	imagePaths := []string{"images/image1.jpeg",
