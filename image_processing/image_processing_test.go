@@ -31,3 +31,16 @@ func TestGrayscale(t *testing.T) {
 		}
 	}
 }
+
+func TestResize(t *testing.T) {
+
+	resizeImg := Resize(imgTest)
+	dimensions := resizeImg.Bounds()
+
+	width := dimensions.Max.X
+	height := dimensions.Max.Y
+
+	if width != 500 && height != 500 {
+		t.Errorf("Resize test failed.")
+	}
+}
