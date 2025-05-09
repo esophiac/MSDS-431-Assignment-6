@@ -98,7 +98,8 @@ func main() {
 		"images/image4.jpeg",
 	}
 
-	channel1 := loadImage(imagePaths)        // read files and returns first channel
+	channel1 := loadImage(imagePaths) // read files and returns first channel
+	fmt.Println(len(channel1))
 	channel2 := resize(channel1)             // resize the image and return another channel
 	channel3 := convertToGrayscale(channel2) // convert to grayscale and return another channel
 	writeResults := saveImage(channel3)      // save processed files

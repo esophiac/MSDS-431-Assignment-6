@@ -12,6 +12,42 @@ import (
 //
 //}
 
+// slice of string paths for testing
+var imagePaths []string = []string{"images/image1.jpeg",
+	"images/image2.jpeg",
+	"images/image3.jpeg",
+	"images/image4.jpeg",
+}
+
+// test the loadImage function in main.go
+// testing the ReadImage function is handled in the imageprocessing tests, so this is
+// just making sure the channels are acting appropriately
+func TestLoadImage(t *testing.T) {
+
+	expected := 4
+
+	result := loadImage(imagePaths)
+
+	if len(result) != expected {
+		t.Errorf("Expected %v, got %v", expected, len(result))
+	}
+
+}
+
+// testing the resize function in main.go
+func TestResize(t *testing.T) {
+
+	input := loadImage(imagePaths)
+
+	expected := 4
+
+	result := resize(input)
+
+	if len(result) != expected {
+		t.Errorf("Expected %v, got %v", expected, len(result))
+	}
+}
+
 func BenchmarkGoRoutine(b *testing.B) {
 	// list of file paths
 	imagePaths := []string{"images/image1.jpeg",
