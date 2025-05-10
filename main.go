@@ -93,9 +93,9 @@ func main() {
 	// program with go routines starts here
 	// list of file paths
 	imagePaths := []string{"images/image5.jpeg",
-		"images/image2.jpeg",
-		"images/image3.jpeg",
-		"images/image4.jpeg",
+		"images/image6.jpeg",
+		"images/image7.jpeg",
+		"images/image8.jpeg",
 	}
 
 	channel1 := loadImage(imagePaths)        // read files and returns first channel
