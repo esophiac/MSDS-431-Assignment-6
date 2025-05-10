@@ -66,6 +66,8 @@ These are the programs in the repository. Data information is in the background 
 - gitignore: from original repository, removed .exe so that the original and final build are included in this repository.
 - go.mod: defines the module's properties
 - go.sum: record of the library the project depends on
+- goroutines_pipeline_final.exe: the executable for the final version of the assignment
+- goroutines_pipeline_original.exe: the executable for the cloned repository before any changes were made
 - LICENSE: from the original repository
 - main_test.go: tests the functions in main.go to make sure the channels are working
 - main.go: runs the program with goroutines and without goroutines
@@ -73,7 +75,7 @@ These are the programs in the repository. Data information is in the background 
 
 
 ## Application
-An executable for this project was created using Windows. To create your own executable, run **go build** in the same directory as the go program. For more information, see the Gopher documentation on creating an executable [here](https://go.dev/doc/tutorial/compile-install).
+Two executables for this project was created using Windows. The first executable(goroutines_pipeline_original) is the executable for the cloned repository before I made any edits. The second executable (goroutines_pipeline_final) was created after the edits. To create your own executable, run **go build** in the same directory as the go program. For more information, see the Gopher documentation on creating an executable [here](https://go.dev/doc/tutorial/compile-install).
 
 ## Use of AI
 AI was not used for this assingment.
